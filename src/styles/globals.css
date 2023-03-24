@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-theme-50 dark:bg-theme-900;
+}
+
+h1 {
+  @apply scroll-m-20 text-4xl font-extrabold tracking-tight text-theme-900  transition-colors   dark:text-theme-200 lg:text-5xl;
+}
+
+h2 {
+  @apply scroll-m-20 text-3xl font-semibold tracking-tight text-theme-900  transition-colors  dark:text-theme-200;
+}
+
+h3 {
+  @apply scroll-m-20 text-2xl font-semibold tracking-tight text-theme-900  transition-colors dark:text-theme-200;
+}
+
+h4 {
+  @apply scroll-m-20 text-xl font-medium tracking-tight text-theme-900 transition-colors  dark:text-theme-200;
+}
+
+p {
+  @apply scroll-m-20 text-base font-normal tracking-tight text-theme-700  transition-colors dark:text-theme-400;
+}

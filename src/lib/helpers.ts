@@ -60,3 +60,6 @@ export function nFormatter(num: number, digits?: number) {
 export function absoluteUrl(path: string) {
   return `${env.NEXT_PUBLIC_URL}${path}`;
 }
+
+export const strStrip = (str?: string): string =>
+  str?.length ? str.toLowerCase().trim() : "";
