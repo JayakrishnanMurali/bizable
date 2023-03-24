@@ -7,7 +7,7 @@ export const SiteFooter = () => {
     <footer className="container text-theme-600 dark:text-theme-500">
       <div className="flex  flex-col items-center justify-between gap-4 border-t border-t-theme-200 dark:border-t-theme-700 py-10 md:h-24 md:flex-row md:py-0">
         <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-          <Icons.logo />
+          <Icons.logo className="hidden sm:inline-block" />
           <p className="text-center text-sm leading-loose md:text-left">
             Built by{" "}
             <a

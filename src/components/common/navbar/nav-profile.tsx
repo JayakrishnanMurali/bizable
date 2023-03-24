@@ -8,10 +8,10 @@ export const NavProfile = () => {
     <div className="flex w-full items-center justify-end gap-x-4">
       <NavThemeToggle />
       <Link
-        href="/login"
+        href="/signin"
         className={cn(buttonVariants({ size: "sm" }), "px-4")}
       >
-        Login
+        Sign in
       </Link>
     </div>
   );
