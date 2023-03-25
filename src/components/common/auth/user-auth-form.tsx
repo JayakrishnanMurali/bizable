@@ -30,7 +30,9 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         )}
         onClick={() => {
           setIsGoogleLoading(true);
-          signIn("google");
+          signIn("google", {
+            callbackUrl: "/",
+          });
         }}
         disabled={isGoogleLoading}
       >
@@ -48,7 +50,9 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         )}
         onClick={() => {
           setIsGitHubLoading(true);
-          signIn("github");
+          signIn("github", {
+            callbackUrl: "/",
+          });
         }}
         disabled={isGitHubLoading}
       >
@@ -66,7 +70,9 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         )}
         onClick={() => {
           setIsDiscordLoading(true);
-          signIn("discord");
+          signIn("discord", {
+            callbackUrl: "/",
+          });
         }}
         disabled={isDiscorldLoading}
       >
