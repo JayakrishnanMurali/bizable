@@ -1,5 +1,6 @@
 "use client";
 
+import { Icons } from "@/components/common/icons";
 import { UserAvatar } from "@/components/common/user-avatar";
 import {
   DropdownMenu,
@@ -23,7 +24,6 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
       <DropdownMenuTrigger>
         <UserAvatar
           user={{ name: user.name || null, image: user.image || null }}
-          className="h-8 w-8"
         />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
@@ -38,14 +38,23 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
           </div>
         </div>
         <DropdownMenuSeparator />
-        <DropdownMenuItem asChild>
-          <Link href="/dashboard">Profile</Link>
+        <DropdownMenuItem asChild disabled>
+          <Link href="/dashboard">
+            <Icons.user className="w-5 h-5 mr-2" />
+            Profile
+          </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href="/dashboard/billing">Your Stories</Link>
+        <DropdownMenuItem asChild disabled>
+          <Link href="/dashboard/billing">
+            <Icons.stories className="w-5 h-5 mr-2" />
+            Your Stories
+          </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href="/dashboard/settings">Bookmarks</Link>
+        <DropdownMenuItem asChild disabled>
+          <Link href="/dashboard/settings">
+            <Icons.bookmarks className="w-5 h-5 mr-2" />
+            Bookmarks
+          </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem
@@ -57,7 +66,7 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
             });
           }}
         >
-          Sign out
+          <Icons.logout className="w-5 h-5 mr-2" /> Sign out
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -1,3 +1,4 @@
+import { Bookmark, Server } from "lucide-react";
 import {
   AlertTriangle,
   Check,
@@ -22,6 +23,7 @@ import {
   Linkedin,
   Github,
   Mail,
+  LogOut,
   type Icon as LucideIcon,
 } from "lucide-react";
 
@@ -29,6 +31,9 @@ export type Icon = LucideIcon;
 
 export const Icons = {
   logo: Terminal,
+  logout: LogOut,
+  bookmarks: Bookmark,
+  stories: Server,
   themeLight: Sun,
   chevronLeft: ChevronLeft,
   linkedIn: Linkedin,

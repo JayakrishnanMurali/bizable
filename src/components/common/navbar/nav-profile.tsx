@@ -12,7 +12,6 @@ export const NavProfile = () => {
 
   return (
     <div className="flex w-full items-center justify-end gap-x-4">
-      <NavThemeToggle />
       {!user ? (
         <Link
           href="/signin"
@@ -23,6 +22,7 @@ export const NavProfile = () => {
       ) : (
         <UserAccountNav user={user} />
       )}
+      <NavThemeToggle />
     </div>
   );
 };
