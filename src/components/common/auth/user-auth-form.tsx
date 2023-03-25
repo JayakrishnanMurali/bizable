@@ -4,6 +4,7 @@ import { useIsDarkTheme } from "@/hooks/use-isdarktheme";
 import { cn } from "@/lib/utils";
 import { userAuthSchema } from "@/lib/validations/auth";
 import { signIn } from "next-auth/react";
+import { useSearchParams } from "next/navigation";
 import * as React from "react";
 import * as z from "zod";
 
@@ -18,6 +19,9 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     React.useState<boolean>(false);
 
   const isDarkTheme = useIsDarkTheme();
+  const searchParams = useSearchParams();
+
+  const fromUrl = searchParams?.get("from") || "/";
 
   return (
     <div className={cn("grid gap-6", className)} {...props}>
@@ -29,7 +33,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         onClick={() => {
           setIsGoogleLoading(true);
           signIn("google", {
-            callbackUrl: "/",
+            callbackUrl: fromUrl,
           });
         }}
         disabled={isGoogleLoading}
@@ -49,7 +53,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         onClick={() => {
           setIsGitHubLoading(true);
           signIn("github", {
-            callbackUrl: "/",
+            callbackUrl: fromUrl,
           });
         }}
         disabled={isGitHubLoading}
@@ -69,7 +73,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         onClick={() => {
           setIsDiscordLoading(true);
           signIn("discord", {
-            callbackUrl: "/",
+            callbackUrl: fromUrl,
           });
         }}
         disabled={isDiscorldLoading}
