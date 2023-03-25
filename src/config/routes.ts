@@ -7,4 +7,5 @@ export const routes = {
   bookmarks: "/bookmarks",
   signIn: "/signin/",
   signUp: "/register/",
+  notFound: "/404/",
 };

@@ -4,16 +4,11 @@ import Meta from "@/components/meta";
 import { buttonVariants } from "@/components/ui/button";
 import { routes } from "@/config/routes";
 import { cn } from "@/lib/utils";
-import { useSession } from "next-auth/react";
+import { getCurrentUserServer } from "@/server/api/validation/get-server-session";
+import { GetServerSideProps } from "next";
 import Link from "next/link";
-import { redirect } from "next/navigation";
-import React from "react";
 
 const Register = () => {
-  const isLoggedIn = !!useSession().data?.user;
-
-  if (isLoggedIn) redirect(routes.home);
-
   return (
     <>
       <Meta
@@ -69,3 +64,17 @@ const Register = () => {
 };
 
 export default Register;
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const user = await getCurrentUserServer(ctx);
+  if (user?.id)
+    return {
+      redirect: {
+        destination: routes.home,
+        permanent: false,
+      },
+    };
+  return {
+    props: {},
+  };
+};

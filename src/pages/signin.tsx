@@ -4,10 +4,9 @@ import Meta from "@/components/meta";
 import { buttonVariants } from "@/components/ui/button";
 import { routes } from "@/config/routes";
 import { cn } from "@/lib/utils";
-import { useSession } from "next-auth/react";
+import { getCurrentUserServer } from "@/server/api/validation/get-server-session";
+import { GetServerSideProps } from "next";
 import Link from "next/link";
-import { redirect } from "next/navigation";
-import React from "react";
 
 const Signin = () => {
   return (
@@ -54,8 +53,16 @@ const Signin = () => {
 
 export default Signin;
 
-// export const getServerSideProps: GetServerSideProps = () => {
-//   return {
-//     props: {hello: 'world'}, // will be passed to the page component as props
-//   };
-// }
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const user = await getCurrentUserServer(ctx);
+  if (user?.id)
+    return {
+      redirect: {
+        destination: routes.home,
+        permanent: false,
+      },
+    };
+  return {
+    props: {},
+  };
+};

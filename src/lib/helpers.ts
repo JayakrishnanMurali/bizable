@@ -1,5 +1,6 @@
 import { env } from "@/env.mjs";
 import ms from "ms";
+import superjson from "superjson";
 
 export const getUserInitials = (name: string | null) => {
   const userName = name;
@@ -63,3 +64,7 @@ export function absoluteUrl(path: string) {
 
 export const strStrip = (str?: string): string =>
   str?.length ? str.toLowerCase().trim() : "";
+
+export const serialize = (data: unknown) => {
+  return superjson.serialize(data).json;
+};
