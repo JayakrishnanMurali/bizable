@@ -31,7 +31,7 @@ const Signin = () => {
               Welcome back
             </h1>
             <p className="text-sm text-theme-500 dark:text-theme-400">
-              Enter your email to sign in to your account
+              Sign in to your account
             </p>
           </div>
           <UserAuthForm />

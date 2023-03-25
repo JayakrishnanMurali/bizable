@@ -33,7 +33,7 @@ const Register = () => {
                 Create an account
               </h1>
               <p className="text-sm text-theme-500 dark:text-theme-400">
-                Enter your email below to create your account
+                Continue with any of the provider to create your account
               </p>
             </div>
             <UserAuthForm />
