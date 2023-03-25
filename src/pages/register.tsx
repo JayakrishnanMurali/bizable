@@ -2,11 +2,18 @@ import { UserAuthForm } from "@/components/common/auth/user-auth-form";
 import { Icons } from "@/components/common/icons";
 import Meta from "@/components/meta";
 import { buttonVariants } from "@/components/ui/button";
+import { routes } from "@/config/routes";
 import { cn } from "@/lib/utils";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import React from "react";
 
 const Register = () => {
+  const isLoggedIn = !!useSession().data?.user;
+
+  if (isLoggedIn) redirect(routes.home);
+
   return (
     <>
       <Meta
@@ -16,7 +23,7 @@ const Register = () => {
 
       <main className="container grid h-screen w-screen flex-col items-center justify-center lg:max-w-none lg:grid-cols-2 lg:px-0">
         <Link
-          href="/signin"
+          href={routes.signIn}
           className={cn(
             buttonVariants({ variant: "ghost" }),
             "absolute top-4 right-4 md:top-8 md:right-8"

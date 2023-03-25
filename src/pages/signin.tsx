@@ -2,8 +2,11 @@ import { UserAuthForm } from "@/components/common/auth/user-auth-form";
 import { Icons } from "@/components/common/icons";
 import Meta from "@/components/meta";
 import { buttonVariants } from "@/components/ui/button";
+import { routes } from "@/config/routes";
 import { cn } from "@/lib/utils";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import React from "react";
 
 const Signin = () => {
@@ -13,7 +16,7 @@ const Signin = () => {
 
       <main className="container flex h-screen w-screen flex-col items-center justify-center">
         <Link
-          href="/"
+          href={routes.home}
           className={cn(
             buttonVariants({ variant: "ghost" }),
             "absolute top-4 left-4 md:top-8 md:left-8"
@@ -37,7 +40,7 @@ const Signin = () => {
           <UserAuthForm />
           <p className="px-8 text-center text-sm text-theme-500 dark:text-theme-400">
             <Link
-              href="/register"
+              href={routes.signUp}
               className="hover:text-brand underline underline-offset-4"
             >
               Don&apos;t have an account? Sign Up
@@ -50,3 +53,9 @@ const Signin = () => {
 };
 
 export default Signin;
+
+// export const getServerSideProps: GetServerSideProps = () => {
+//   return {
+//     props: {hello: 'world'}, // will be passed to the page component as props
+//   };
+// }

@@ -1,5 +1,6 @@
 import { Icons } from "@/components/common/icons";
 import { buttonVariants } from "@/components/ui/button";
+import { routes } from "@/config/routes";
 import { useIsDarkTheme } from "@/hooks/use-isdarktheme";
 import { cn } from "@/lib/utils";
 import { userAuthSchema } from "@/lib/validations/auth";
@@ -21,7 +22,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const isDarkTheme = useIsDarkTheme();
   const searchParams = useSearchParams();
 
-  const fromUrl = searchParams?.get("from") || "/";
+  const fromUrl = searchParams?.get("from") || routes.home;
 
   return (
     <div className={cn("grid gap-6", className)} {...props}>

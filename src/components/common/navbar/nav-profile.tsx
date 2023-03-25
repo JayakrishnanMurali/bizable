@@ -2,6 +2,7 @@ import { NavThemeToggle } from "@/components/common/navbar";
 import { UserAccountNav } from "@/components/common/navbar/nav-useraccount";
 import { PostCreateButton } from "@/components/common/post-create-button";
 import { buttonVariants } from "@/components/ui/button";
+import { routes } from "@/config/routes";
 import { strStrip } from "@/lib/helpers";
 import { cn } from "@/lib/utils";
 import { useSession } from "next-auth/react";
@@ -22,7 +23,7 @@ export const NavProfile = () => {
         <>
           <NavThemeToggle />
           <Link
-            href="/signin"
+            href={routes.signIn}
             className={cn(buttonVariants({ size: "sm" }), "px-4")}
           >
             Sign in

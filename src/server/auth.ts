@@ -1,3 +1,4 @@
+import { routes } from "@/config/routes";
 import { env } from "@/env.mjs";
 import { prisma } from "@/server/db";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
@@ -34,7 +35,7 @@ export const authOptions: NextAuthOptions = {
     },
   },
   pages: {
-    signIn: "/signin",
+    signIn: routes.signIn,
   },
   adapter: PrismaAdapter(prisma),
   providers: [

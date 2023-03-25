@@ -1,5 +1,6 @@
 import { Icons } from "@/components/common/icons";
 import { buttonVariants } from "@/components/ui/button";
+import { routes } from "@/config/routes";
 import { toast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 import { api } from "@/utils/api";
@@ -23,7 +24,7 @@ export function PostCreateButton({
       onSuccess: (res) => {
         if (res) {
           // await router.refresh();
-          router.push(`/editor/${res.id}`);
+          router.push(`${routes.newPost}${res.id}`);
         }
       },
       onError: () => {

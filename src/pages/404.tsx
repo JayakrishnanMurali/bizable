@@ -1,5 +1,6 @@
 import Meta from "@/components/meta";
 import { Button } from "@/components/ui/button";
+import { routes } from "@/config/routes";
 import Link from "next/link";
 
 const NotFound = () => {
@@ -11,7 +12,7 @@ const NotFound = () => {
         <h1>404</h1>
         <h2>Page not found</h2>
         <p>The page you're looking for doesn't exist or has been moved.</p>
-        <Link href="/">
+        <Link href={routes.home}>
           <Button>Go back home</Button>
         </Link>
       </div>
