@@ -1,5 +1,3 @@
-"use client";
-
 import { Icons } from "@/components/common/icons";
 import { buttonVariants } from "@/components/ui/button";
 import { useIsDarkTheme } from "@/hooks/use-isdarktheme";
