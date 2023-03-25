@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useIsDarkTheme } from "@/hooks/use-isdarktheme";
-import { strStrip } from "@/lib/helpers";
+import { useMounted } from "@/hooks/use-mounted";
 import { useTheme } from "next-themes";
 import * as React from "react";
 
@@ -16,7 +16,10 @@ export const NavThemeToggle = () => {
 
   const isDarktheme = useIsDarkTheme();
 
-  const SelectedIcon = isDarktheme ? Icons.themeDark : Icons.themeLight;
+  const mounted = useMounted();
+
+  const SelectedIcon =
+    isDarktheme && mounted ? Icons.themeDark : Icons.themeLight;
 
   return (
     <DropdownMenu>

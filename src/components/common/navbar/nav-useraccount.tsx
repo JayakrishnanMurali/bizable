@@ -1,5 +1,3 @@
-"use client";
-
 import { UserAvatar } from "@/components/common/user-avatar";
 import {
   DropdownMenu,
