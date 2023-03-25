@@ -1,4 +1,4 @@
-import { MainLayout } from "@/components/common/main-layout";
+import { MainLayout } from "@/components/common/layouts/main-layout";
 import Meta from "@/components/meta";
 import { type NextPage } from "next";
 
