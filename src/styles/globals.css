@@ -25,3 +25,35 @@ h4 {
 p {
   @apply scroll-m-20 text-base font-normal tracking-tight text-theme-700  transition-colors dark:text-theme-400;
 }
+
+.ce-toolbar__content {
+  @apply absolute -left-2;
+}
+.ce-block--selected .ce-block__content {
+  @apply bg-theme-100 dark:bg-theme-800;
+}
+
+.ce-toolbar__plus,
+.ce-toolbar__settings-btn {
+  @apply text-theme-900 dark:text-theme-50 dark:hover:bg-theme-700;
+}
+
+.ce-popover {
+  @apply text-theme-500 dark:border-theme-800 dark:bg-theme-800;
+}
+.cdx-search-field {
+  @apply text-theme-400 dark:border-theme-700 dark:bg-theme-700;
+}
+.ce-popover__item {
+  @apply hover:bg-theme-50 hover:dark:bg-theme-900;
+}
+.ce-popover__item:hover:not(.ce-popover__item--no-visible-hover) {
+  @apply hover:bg-theme-200 hover:dark:bg-theme-900;
+}
+.ce-popover__item-icon {
+  @apply dark:bg-theme-700 dark:text-theme-400 dark:ring-0;
+}
+
+.ce-popover__item--confirmation {
+  @apply hover:!bg-[#e24a4a];
+}

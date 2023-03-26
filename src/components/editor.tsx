@@ -34,10 +34,14 @@ export const Editor = ({ post }: EditorProps) => {
     const Header = (await import("@editorjs/header")).default;
     const Embed = (await import("@editorjs/embed")).default;
     const Table = (await import("@editorjs/table")).default;
-    const List = (await import("@editorjs/list")).default;
+    const NestedList = (await import("@editorjs/nested-list")).default;
     const Code = (await import("@editorjs/code")).default;
     const LinkTool = (await import("@editorjs/link")).default;
     const InlineCode = (await import("@editorjs/inline-code")).default;
+    const Quote = (await import("@editorjs/quote")).default;
+    const Warning = (await import("@editorjs/warning")).default;
+    const Delimiter = (await import("@editorjs/delimiter")).default;
+    const ImageTool = (await import("@editorjs/image")).default;
 
     const body = postPatchSchema.parse(post);
 
@@ -52,12 +56,42 @@ export const Editor = ({ post }: EditorProps) => {
         data: body.content,
         tools: {
           header: Header,
-          linkTool: LinkTool,
-          list: List,
+          linkTool: {
+            class: LinkTool,
+            config: {
+              endpoint: "http://localhost:8008/fetchUrl", // Your backend endpoint for url data fetching,
+            },
+          },
+          image: {
+            class: ImageTool,
+            config: {
+              endpoints: {
+                byFile: "http://localhost:8008/uploadFile", // Your backend file uploader endpoint
+                byUrl: "http://localhost:8008/fetchUrl", // Your endpoint that provides uploading by Url
+              },
+            },
+          },
+          list: {
+            class: NestedList,
+            inlineToolbar: true,
+            config: {
+              defaultStyle: "unordered",
+            },
+          },
           code: Code,
           inlineCode: InlineCode,
           table: Table,
           embed: Embed,
+          quote: {
+            class: Quote,
+            shortcut: "CMD+Q",
+            config: {
+              quotePlaceholder: "Enter a quote",
+              captionPlaceholder: "Quote's author name or write a caption",
+            },
+          },
+          warning: Warning,
+          delimiter: Delimiter,
         },
       });
     }
@@ -74,8 +108,10 @@ export const Editor = ({ post }: EditorProps) => {
     }
   }, [isMounted, initializeEditor]);
 
-  const onSubmit = () => {
-    // publish api call
+  const onSubmit = async (data: FormData) => {
+    const title = data.title;
+    const blocks = await ref.current?.save();
+    console.log(blocks);
   };
 
   return (
@@ -109,11 +145,11 @@ export const Editor = ({ post }: EditorProps) => {
             autoFocus
             id="title"
             defaultValue={post.title ?? ""}
-            placeholder="Post title"
+            placeholder="hmm!! Title?"
             className="w-full resize-none bg-transparent appearance-none overflow-hidden text-5xl font-bold focus:outline-none"
             {...register("title")}
           />
-          <div id="editor" className="min-h-[500px]" />
+          <div id="editor" className="min-h-[500px] " />
           <p className="text-sm text-theme-500">
             Use{" "}
             <kbd className="rounded-md border bg-theme-100 dark:bg-theme-800 dark:border-theme-900 px-1 text-xs uppercase">

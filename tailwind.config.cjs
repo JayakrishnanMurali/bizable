@@ -32,8 +32,8 @@ const config = {
         accent: {
           1: "#94d1be",
           "1-dark": "#62bb9f",
-          2: "#b97375",
-          3: "#9882ac",
+          2: "#e0f2fe",
+          3: "#0369a1",
           "discord-blue": "#738ADB",
           "discord-dark": "#4967d0",
         },
