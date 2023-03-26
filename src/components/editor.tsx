@@ -31,6 +31,7 @@ export const Editor = ({ post }: EditorProps) => {
 
   const initializeEditor = useCallback(async () => {
     const EditorJS = (await import("@editorjs/editorjs")).default;
+    const Marker = (await import("@editorjs/marker")).default;
     const Header = (await import("@editorjs/header")).default;
     const Embed = (await import("@editorjs/embed")).default;
     const Table = (await import("@editorjs/table")).default;
@@ -41,6 +42,8 @@ export const Editor = ({ post }: EditorProps) => {
     const Quote = (await import("@editorjs/quote")).default;
     const Warning = (await import("@editorjs/warning")).default;
     const Delimiter = (await import("@editorjs/delimiter")).default;
+    const Underline = (await import("@editorjs/underline")).default;
+    const Strikethrough = (await import("@sotaproject/strikethrough")).default;
     const ImageTool = (await import("@editorjs/image")).default;
 
     const body = postPatchSchema.parse(post);
@@ -78,10 +81,16 @@ export const Editor = ({ post }: EditorProps) => {
               defaultStyle: "unordered",
             },
           },
+          underline: Underline,
+          strikethrough: Strikethrough,
           code: Code,
           inlineCode: InlineCode,
           table: Table,
           embed: Embed,
+          Marker: {
+            class: Marker,
+            shortcut: "CMD+SHIFT+M",
+          },
           quote: {
             class: Quote,
             shortcut: "CMD+Q",

@@ -41,6 +41,14 @@ p {
 .ce-popover {
   @apply text-theme-500 dark:border-theme-800 dark:bg-theme-800;
 }
+.ce-conversion-toolbar {
+  @apply text-theme-500 dark:border-theme-800 dark:bg-theme-700;
+}
+.ce-conversion-tool--focused,
+.ce-conversion-tool {
+  @apply !bg-white !ring-0 hover:!bg-theme-200 dark:!bg-theme-800 hover:dark:!bg-theme-900;
+}
+
 .cdx-search-field {
   @apply text-theme-400 dark:border-theme-700 dark:bg-theme-700;
 }
@@ -50,10 +58,31 @@ p {
 .ce-popover__item:hover:not(.ce-popover__item--no-visible-hover) {
   @apply hover:bg-theme-200 hover:dark:bg-theme-900;
 }
-.ce-popover__item-icon {
+.ce-popover__item-icon,
+.ce-conversion-tool__icon {
   @apply dark:bg-theme-700 dark:text-theme-400 dark:ring-0;
 }
 
 .ce-popover__item--confirmation {
   @apply hover:!bg-[#e24a4a];
+}
+
+.cdx-marker {
+  @apply !bg-[#FFFF00];
+}
+
+.ce-inline-toolbar {
+  @apply p-2 dark:border-theme-800 dark:bg-theme-800;
+}
+
+.ce-inline-tool {
+  @apply rounded-md p-2 dark:hover:bg-theme-900;
+}
+
+.ce-inline-toolbar__dropdown {
+  @apply rounded-md border-none p-2 dark:hover:bg-theme-900;
+}
+
+.ce-inline-toolbar__buttons {
+  @apply gap-x-2;
 }

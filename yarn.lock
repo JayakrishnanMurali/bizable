@@ -223,6 +223,11 @@
   resolved "https://registry.yarnpkg.com/@codexteam/icons/-/icons-0.0.6.tgz#5553ada48dddf5940851ccc142cfe17835c36ad3"
   integrity sha512-L7Q5PET8PjKcBT5wp7VR+FCjwCi5PUp7rd/XjsgQ0CI5FJz0DphyHGRILMuDUdCW2MQT9NHbVr4QP31vwAkS/A==
 
+"@codexteam/icons@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@codexteam/icons/-/icons-0.0.8.tgz#25bc8ba083b179b958b0e133d3ee5c2475b02343"
+  integrity sha512-toTLbLPbrDFl2ZK2mtDC+P7sdrJaqOK6URsjFy6m54Pry8q4ckKeKJ1fOEwVcSGKiwdRhrRO3ZzSbL16DaIBJA==
+
 "@commitlint/cli@^17.3.0":
   version "17.5.0"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-17.5.0.tgz#045bf46fc38bb4246da30b462d8db66f48c28f9a"
@@ -527,6 +532,13 @@
     "@babel/runtime" "^7.10.2"
     "@codexteam/icons" "^0.0.4"
 
+"@editorjs/marker@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@editorjs/marker/-/marker-1.3.0.tgz#425358a52aa6ff0133bdf0f063c958a02f00e1e3"
+  integrity sha512-RYWYDnFPjNBJgR7KIGjB9gPnUwGvn2aIoRevAm422Wx1mg5eT4gcvwc0T5V76pYPSoD2Z0T2GPkzl9d1hl398w==
+  dependencies:
+    "@codexteam/icons" "^0.0.5"
+
 "@editorjs/nested-list@^1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@editorjs/nested-list/-/nested-list-1.3.0.tgz#07945544c8cdb06b6317fef229284475dafd8707"
@@ -552,6 +564,13 @@
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@editorjs/table/-/table-2.2.1.tgz#10302ec89bf7f2134b982de900013b0ae4b6a6aa"
   integrity sha512-6RJKF0DfPh7YuBVPmT5mHXjjhil2IJ8ytZpw2hTHAuduqoRlu6OJbaGzH2NTCdg7cgD4H4BbX0RB9kcVxRtB2w==
+  dependencies:
+    "@codexteam/icons" "^0.0.6"
+
+"@editorjs/underline@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@editorjs/underline/-/underline-1.1.0.tgz#24a356f0d0d527b99b24542c8645d29dceb711dd"
+  integrity sha512-vQj2ROW1KreD31QHlhaPikmDJGWYzRBusN4Zyfwl9nIIQCByt4S8fZQpsrRvH4sct5mkirsHllNT00rJlqHK7Q==
   dependencies:
     "@codexteam/icons" "^0.0.6"
 
@@ -1910,6 +1929,13 @@
   dependencies:
     fflate "^0.7.3"
     string.prototype.codepointat "^0.2.1"
+
+"@sotaproject/strikethrough@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@sotaproject/strikethrough/-/strikethrough-1.0.1.tgz#7ea490dd7a1dc00b672631fbef59d541c15eb49b"
+  integrity sha512-tgfYXrg+lY6lCh2ZXyoPfe8rxpe+orRgiI2mOSyu1z/+gb9xIjOGhIXNgC6ehOmZUzqtoWzi9SrIEALCYfQpjA==
+  dependencies:
+    "@codexteam/icons" "^0.0.8"
 
 "@swc/helpers@0.4.14":
   version "0.4.14"
